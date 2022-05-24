@@ -50,16 +50,18 @@ function App() {
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((item, index) => (
-            <Card
-              key={index}
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              onFavorite={() => console.log('Добавили в закладки')}
-              onPlus={(obj) => onAddToCart(obj)}
-            />
-          ))}
+          {items
+            .filter((item) => item.title.toLowerCase().includes(searchValue))
+            .map((item, index) => (
+              <Card
+                key={index}
+                title={item.title}
+                price={item.price}
+                imageUrl={item.imageUrl}
+                onFavorite={() => console.log('Добавили в закладки')}
+                onPlus={(obj) => onAddToCart(obj)}
+              />
+            ))}
         </div>
       </div>
     </div>
