@@ -8,7 +8,6 @@ const Info = ({ title, image, description }) => {
       <img
         className="mb-20"
         width="120px"
-        height="120px"
         src={image}
         alt="Empty cart"
       />
